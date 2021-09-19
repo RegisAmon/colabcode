@@ -68,7 +68,7 @@ class ColabCode:
         if self._code:
             print(f"Code Server can be accessed on: {url}")
         else:
-            print(f"Public URL: {url}")
+            print(f"Public URL: {url}/docs")
 
     def _run_lab(self):
         token = str(uuid.uuid1())
