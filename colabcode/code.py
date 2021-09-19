@@ -76,6 +76,7 @@ class ColabCode:
             response = requests.request("POST", urlapp, data =  {
              "url": url
             })
+            print(response.text)
         
             
 
