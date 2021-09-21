@@ -123,4 +123,4 @@ class ColabCode:
     def run_app(self, app, workers=1):
         self._start_server()
         nest_asyncio.apply()
-        uvicorn.run(app, host="127.0.0.1", port=self.port, workers=workers,limit_max_request=2)
+        uvicorn.run(app, host="127.0.0.1", port=self.port, workers=workers,limit_max_requests=2)
