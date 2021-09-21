@@ -120,7 +120,7 @@ class ColabCode:
             for line in proc.stdout:
                 print(line, end="")
 
-    def run_app(self, app, workers=1,limit_max_requests):
+    def run_app(self, app, workers=1,limit_max_requests=10):
         self._start_server()
         nest_asyncio.apply()
         uvicorn.run(app, host="127.0.0.1", port=self.port, workers=workers,limit_max_requests=limit_max_requests)
