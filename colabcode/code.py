@@ -67,6 +67,7 @@ class ColabCode:
         url = ngrok.connect(addr=self.port, bind_tls=True)
         if self._code:
             print(f"Code Server can be accessed on: {url}")
+            print(url.replace("io", "io/docs"))
         else:
             print(f"Public URL: {url}")
             import requests
