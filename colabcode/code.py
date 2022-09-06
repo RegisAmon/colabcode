@@ -74,6 +74,13 @@ class ColabCode:
             print(f"Public URL: {url}")
             print(str(url).replace("io", "io/docs"))
             import requests
+            from deta import Deta
+            deta = Deta("a04j6lmx_L1TXM7QYVPpu4vJNy7A19rLwfXH9LA4t")
+            users = deta.Base("api2")
+            users.put({  "endpoint": str(url)}, '6dno931zd0q1')
+            print('heyyy',str(url))   
+            user = users.get('6dno931zd0q1')
+            print('hoooooo',user['endpoint'])
 
             urlapp = "https://dionysos.bubbleapps.io/version-test/api/1.1/obj/url"
 
@@ -82,12 +89,7 @@ class ColabCode:
             })
             print(response.text)
             
-            deta = Deta("a04j6lmx_L1TXM7QYVPpu4vJNy7A19rLwfXH9LA4t")
-            users = deta.Base("api")
-            users.put({  "name": str(url)}, 'odjt7zusdgsc')
-            print(str(url))   
-            user = users.get('odjt7zusdgsc')
-            print(user['name'])
+
                 
     def _run_lab(self):
         token = str(uuid.uuid1())
